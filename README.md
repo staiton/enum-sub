@@ -1,10 +1,10 @@
+
 # enum-sub
 
 A simple Python-based subdomain enumeration tool using DNS resolution and wordlist brute force techniques.
 
 > This tool is intended for educational purposes and authorized security testing only.
 
----
 
 ## Features
 
@@ -15,9 +15,9 @@ A simple Python-based subdomain enumeration tool using DNS resolution and wordli
 - Modular Python structure
 
 ---
-
 ## Project Structure
 
+```bash
 enum-sub/
 ├── enum_sub/
 │ ├── init.py
@@ -28,9 +28,9 @@ enum-sub/
 ├── requirements.txt
 ├── README.md
 └── .venv/
+```
 
 ---
-
 ## Requirements
 
 - Python 3.8+
@@ -41,27 +41,29 @@ Install dependencies:
 
 ```bash
 pip install -r requirements.txt
+```
 
 ---
-
 ## Installation
 
+```bash
 git clone https://github.com/your-username/enum-sub.git
 cd enum-sub
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-
----
-
+```
+    
 ## Usage
 
+```bash
 python3 -m enum_sub.main example.com -w wordlist.txt
+```
 
 ---
-
 ## Example Output
 
+```bash
 [+] Starting subdomain brute force on example.com
 --------------------------------------------------
 [TESTING] www.example.com
@@ -70,9 +72,9 @@ python3 -m enum_sub.main example.com -w wordlist.txt
 [TESTING] ftp.example.com
 
 [+] Finished.
+```
 
 ---
-
 ## How it works
 
 1. Loads a wordlist of common subdomain names
@@ -81,7 +83,6 @@ python3 -m enum_sub.main example.com -w wordlist.txt
 4. Displays results in real-time
 
 ---
-
 ## Legal Disclaimer
 
 This tool is for:
@@ -93,9 +94,7 @@ Security research in controlled environments
 Do NOT use against domains you do not own or have permission to test.
 
 The author is not responsible for misuse.
-
 ## Author
 
-Gabriel França
+- [@staiton](https://www.github.com/staiton)
 
-Cybersecurity enthusiast • Network analyst •
