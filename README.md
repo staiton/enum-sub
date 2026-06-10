@@ -1,11 +1,16 @@
-# Enumerador de Subdomínios
+# enum-sub
 
-O propósito dessa ferramenta é enumerar subdomínios da maneira mais simples possível.
+Ferramenta simples em Python para enumeração de DNS e subdomínios.
 
-## Tecnologias
+## Features
+- Resolução DNS
+- Base para enumeração de subdomínios
+- Código limpo e modular
 
-- Python 
+## Requisitos
+- Python 3.9+
+- Linux / macOS
 
-## Objetivo
-
-Treinar meus conhecimentos em Python e aplica-los em cibersegurança.
+## Instalação
+```bash
+pip install -r requirements.txt
