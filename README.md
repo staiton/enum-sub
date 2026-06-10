@@ -47,7 +47,7 @@ pip install -r requirements.txt
 ## Installation
 
 ```bash
-git clone https://github.com/your-username/enum-sub.git
+git clone https://github.com/staiton/enum-sub.git
 cd enum-sub
 python3 -m venv .venv
 source .venv/bin/activate
