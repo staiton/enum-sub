@@ -1,15 +1,23 @@
 import dns.resolver
 
-def dns_enum(domain):
-    print(f"\n[+] Enumerating DNS for {domain}")
-    print("-" * 30)
-
+def resolve(subdomain):
     try:
-        answers = dns.resolver.resolve(domain, "A")
+        answers = dns.resolver.resolve(subdomain, "A")
+        return [rdata.to_text() for rdata in answers]
+    except:
+        return None
 
-        print("A Records:")
-        for rdata in answers:
-            print(f" - {rdata}")
 
-    except Exception as e:
-        print(f"[-] Error: {e}")
+def brute_force_subdomains(domain, wordlist_path):
+    print(f"\n[+] Starting subdomain brute force on {domain}")
+    print("-" * 50)
+
+    with open(wordlist_path, "r") as file:
+        words = file.read().splitlines()
+
+    for word in words:
+        subdomain = f"{word}.{domain}"
+        result = resolve(subdomain)
+
+        if result:
+            print(f"[FOUND] {subdomain} -> {', '.join(result)}")

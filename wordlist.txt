@@ -1,0 +1,8 @@
+www
+mail
+ftp
+dev
+api
+test
+admin
+vpn
