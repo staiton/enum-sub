@@ -1,4 +1,5 @@
 import dns.resolver
+import sys
 
 def resolve(subdomain):
     try:
@@ -17,7 +18,13 @@ def brute_force_subdomains(domain, wordlist_path):
 
     for word in words:
         subdomain = f"{word}.{domain}"
+
+        sys.stdout.write(f"\r[TESTING] {subdomain}   ")
+        sys.stdout.flush()
+
         result = resolve(subdomain)
 
         if result:
-            print(f"[FOUND] {subdomain} -> {', '.join(result)}")
+            print(f"\n[FOUND] {subdomain} -> {', '.join(result)}")
+
+    print("\n\n[+] Finished.")
