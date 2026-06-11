@@ -66,6 +66,18 @@ python3 -m enum_sub.main example.com -w wordlist.txt -t 20
 ## Example Output
 
 ```bash
+
+╔════════════════════════════════════════════╗
+║               ENUM-SUB TOOL                ║
+║        Subdomain Brute Force Scanner       ║
+╠════════════════════════════════════════════╣
+║  Author : staiton                          ║
+║  Mode   : Multithreaded DNS Enumeration    ║
+║  Status : Ready                            ║
+╠════════════════════════════════════════════╣
+║  Use only on authorized targets            ║
+╚════════════════════════════════════════════╝
+
 [+] Starting subdomain brute force on example.com
 [+] Wordlist size: 999
 [+] Threads: 20
