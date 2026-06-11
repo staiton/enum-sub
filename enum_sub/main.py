@@ -3,6 +3,19 @@ import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from enum_sub.dns_enum import resolve_subdomain
 
+def print_banner():
+    print("""
+╔════════════════════════════════════════════╗
+║               ENUM-SUB TOOL                ║
+║        Subdomain Brute Force Scanner       ║
+╠════════════════════════════════════════════╣
+║  Author : staiton                          ║
+║  Mode   : Multithreaded DNS Enumeration    ║
+║  Status : Ready                            ║
+╠════════════════════════════════════════════╣
+║  Use only on authorized targets            ║
+╚════════════════════════════════════════════╝
+""")
 
 def load_wordlist(path: str):
     with open(path, "r") as f:
@@ -19,6 +32,7 @@ def print_status(text: str):
 
 
 def main(domain: str, wordlist_path: str, threads: int):
+    print_banner()
     words = load_wordlist(wordlist_path)
     total = len(words)
     tested = 0
