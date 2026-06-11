@@ -10,7 +10,9 @@ A simple Python-based subdomain enumeration tool using DNS resolution and wordli
 
 - DNS resolution (A records)
 - Subdomain brute force using wordlists
-- Real-time scanning output in terminal
+- Multithreaded subdomain brute force
+- Real-time CLI status display
+- Clean and stable terminal output
 - Lightweight and easy to extend
 - Modular Python structure
 
@@ -57,7 +59,7 @@ pip install -r requirements.txt
 ## Usage
 
 ```bash
-python3 -m enum_sub.main example.com -w wordlist.txt
+python3 -m enum_sub.main example.com -w wordlist.txt -t 20
 ```
 
 ---
@@ -65,13 +67,15 @@ python3 -m enum_sub.main example.com -w wordlist.txt
 
 ```bash
 [+] Starting subdomain brute force on example.com
+[+] Wordlist size: 999
+[+] Threads: 20
 --------------------------------------------------
-[TESTING] www.example.com
-[TESTING] mail.example.com
-[FOUND] api.example.com -> 93.184.216.34
-[TESTING] ftp.example.com
+[TESTING] www.example.com (8/999)                                               
+[FOUND] www.example.com -> 104.20.23.154
+                                                                                
+--------------------------------------------------
+[+] Finished. 1 subdomains found.
 
-[+] Finished.
 ```
 
 ---
@@ -80,7 +84,9 @@ python3 -m enum_sub.main example.com -w wordlist.txt
 1. Loads a wordlist of common subdomain names
 2. Appends each word to the target domain
 3. Performs DNS A record lookup
-4. Displays results in real-time
+4. Uses multithreading for fast DNS resolution
+5. Displays live scanning status in terminal
+6. Ensures clean output during concurrent execution
 
 ---
 ## Legal Disclaimer
