@@ -1,5 +1,5 @@
 
-# enum-sub
+# ENUM-SUB TOOL
 
 A simple Python-based subdomain enumeration tool using DNS resolution and wordlist brute force techniques.
 
