@@ -22,14 +22,13 @@ A simple Python-based subdomain enumeration tool using DNS resolution and wordli
 ```bash
 enum-sub/
 ├── enum_sub/
-│ ├── init.py
-│ ├── main.py
-│ └── dns_enum.py
-│
-├── wordlist.txt
+│   ├── __init__.py
+│   ├── main.py
+│   └── dns_enum.py
+├── wordlists/
+│   └── subs.txt
 ├── requirements.txt
-├── README.md
-└── .venv/
+└── README.md
 ```
 
 ---
@@ -78,15 +77,22 @@ python3 -m enum_sub.main example.com -w wordlist.txt -t 20
 ║  Use only on authorized targets            ║
 ╚════════════════════════════════════════════╝
 
-[+] Starting subdomain brute force on example.com
-[+] Wordlist size: 999
-[+] Threads: 20
+[*] Checking for wildcard DNS...
+[+] Target   : example.com
+[+] Wordlist : 5000 entries
+[+] Threads  : 20
 --------------------------------------------------
-[TESTING] www.example.com (8/999)                                               
-[FOUND] www.example.com -> 104.20.23.154
-                                                                                
+
+[FOUND] www.example.com -> 93.184.216.34
+[FOUND] mail.example.com -> 93.184.216.35
+
 --------------------------------------------------
-[+] Finished. 1 subdomains found.
+[+] Scan complete. 2 subdomain(s) found.
+
+ SUBDOMAIN                                    IP
+ ──────────────────────────────────────────── ───────────────
+ mail.example.com                              93.184.216.35
+ www.example.com                               93.184.216.34
 
 ```
 
