@@ -57,8 +57,19 @@ pip install -r requirements.txt
     
 ## Usage
 
+Basic usage:
 ```bash
-python3 -m enum_sub.main example.com -w wordlist.txt -t 20
+python3 -m enum_sub.main example.com -w wordlists/subs.txt
+```
+
+Use with more threads:
+```bash
+python3 -m enum_sub.main example.com -w wordlists/subs.txt -t 50
+```
+
+Saving the results to a file:
+```bash
+python3 -m enum_sub.main example.com -w wordlists/subs.txt -o results.txt
 ```
 
 ---
